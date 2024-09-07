@@ -83,7 +83,7 @@ namespace Test
             }
             catch (Exception ex)
             {
-                // Fail the test if an exception occurs during assertion.
+                // Fail the test if an exception occurs during assertion
                 Assert.Fail(ex.Message);
             }
         }
@@ -124,7 +124,7 @@ namespace Test
             }
             catch (Exception ex)
             {
-                // Fail the test if an exception occurs during assertion.
+                // Fail the test if an exception occurs during assertion
                 Assert.Fail(ex.Message);
             }
         }
@@ -174,7 +174,7 @@ namespace Test
             }
             catch (Exception ex)
             {
-                // Fail the test if an exception occurs during assertion.
+                // Fail the test if an exception occurs during assertion
                 Assert.Fail(ex.Message);
             }
         }
@@ -214,7 +214,7 @@ namespace Test
             }
             catch (Exception ex)
             {
-                // Fail the test if an exception occurs during assertion.
+                // Fail the test if an exception occurs during assertion
                 Assert.Fail(ex.Message);
             }
         }
@@ -254,7 +254,7 @@ namespace Test
             }
             catch (Exception ex)
             {
-                // Fail the test if an exception occurs during assertion.
+                // Fail the test if an exception occurs during assertion
                 Assert.Fail(ex.Message);
             }
         }
@@ -302,7 +302,7 @@ namespace Test
             }
             catch (Exception ex)
             {
-                // Fail the test if an exception occurs during assertion.
+                // Fail the test if an exception occurs during assertion
                 Assert.Fail(ex.Message);
             }
         }
@@ -348,7 +348,7 @@ namespace Test
             }
             catch (Exception ex)
             {
-                // Fail the test if an exception occurs during assertion.
+                // Fail the test if an exception occurs during assertion
                 Assert.Fail(ex.Message);
             }
         }
