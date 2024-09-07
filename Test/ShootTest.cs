@@ -119,7 +119,7 @@ namespace Test
                 // Assert: Ensures the shoot status is not null
                 Assert.IsNotNull(shootStatus, "Shoot status value is null on shoot result.");
 
-                // Assert: Ensures the expected shoot status is matched with the acctual status
+                // Assert: Ensures the expected shoot status is matched with the actual status
                 Assert.AreEqual(status, shootStatus, "Expected result is not matched with the act.");
             }
             catch (Exception ex)
@@ -149,9 +149,9 @@ namespace Test
             int[] rows      = new int[10] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
             int[] columns   = new int[10] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
-            // extract the rows that are not occupied any ship
+            // extract the rows that are not occupied by any ship
             var missRows    = rows.Where(x => !positions.Select(r => r.Row).Contains(x)).ToList();
-            // extract the columns that are not occupied any ship
+            // extract the columns that are not occupied by any ship
             var missColumns = columns.Where(x => !positions.Select(r => r.Column).Contains(x)).ToList();
 
             var row         = missRows.First();
@@ -169,7 +169,7 @@ namespace Test
                 // Assert: Ensures the shoot status is not null
                 Assert.IsNotNull(shootStatus, "Shoot status value is null on shoot result.");
 
-                // Assert: Ensures the expected shoot status is matched with the acctual status
+                // Assert: Ensures the expected shoot status is matched with the actual status
                 Assert.AreEqual(status, shootStatus, "Expected result is not matched with the act.");
             }
             catch (Exception ex)
@@ -193,7 +193,7 @@ namespace Test
             // gets ship data
             var result = await _shipService.GetShipList(cacheKey);
 
-            // out of boundry values
+            // out of boundary values
             var row    = 12;
             var column = 5;
 
@@ -209,7 +209,7 @@ namespace Test
                 // Assert: Ensures the shoot status is not null
                 Assert.IsNotNull(shootStatus, "Shoot status value is null on shoot result.");
 
-                // Assert: Ensures the expected shoot status is matched with the acctual status
+                // Assert: Ensures the expected shoot status is matched with the actual status
                 Assert.AreEqual(status, shootStatus, "Expected result is not matched with the act.");
             }
             catch (Exception ex)
@@ -249,7 +249,7 @@ namespace Test
                 // Assert: Ensures the shoot status is not null
                 Assert.IsNotNull(shootStatus, "Shoot status value is null on shoot result.");
 
-                // Assert: Ensures the expected shoot status is matched with the acctual status
+                // Assert: Ensures the expected shoot status is matched with the actual status
                 Assert.AreEqual(status, shootStatus, "Expected result is not matched with the act.");
             }
             catch (Exception ex)
@@ -284,10 +284,10 @@ namespace Test
             // stores new status
             ShootStatus? newStatus = null;
 
-            // shoots untill the positions are found
+            // shoots until the positions are found
             foreach (var p in positions)
             {
-                // Retrieves the shoot result
+                // Retrieves the shot result
                 var shootResult = await _shootService.GetShootResult(p.Row, p.Column, cacheKey);
                 newStatus       = shootResult.Data.ShootStatus;
             }
@@ -297,7 +297,7 @@ namespace Test
                 // Assert: Ensures the shoot status is not null
                 Assert.IsNotNull(newStatus, "Shoot status value is null on shoot result.");
 
-                // Assert: Ensures the expected shoot status is matched with the acctual status
+                // Assert: Ensures the expected shoot status is matched with the actual status
                 Assert.AreEqual(status, newStatus, "Expected result is not matched with the act.");
             }
             catch (Exception ex)
@@ -320,7 +320,7 @@ namespace Test
             string cacheKey = "test-key";
             // gets ship data
             var result      = await _shipService.GetShipList(cacheKey);
-            // all ships positions
+            // all ship's positions
             var positions   = result?.Data?.SelectMany(x => x.ShipPositions).ToList();
             // shoot status
             var status      = ShootStatus.Won;
@@ -330,10 +330,10 @@ namespace Test
             // stores new status
             ShootStatus? newStatus = null;
 
-            // shoots untill the positions are found
+            // shoots until the positions are found
             foreach (var p in positions)
             {
-                // Retrieves the shoot result
+                // Retrieves the shot result
                 var shootResult = await _shootService.GetShootResult(p.Row, p.Column, cacheKey);
                 newStatus       = shootResult.Data.ShootStatus;
             }
@@ -343,7 +343,7 @@ namespace Test
                 // Assert: Ensures the shoot status is not null
                 Assert.IsNotNull(newStatus, "Shoot status value is null on shoot result.");
 
-                // Assert: Ensures the expected shoot status is matched with the acctual status
+                // Assert: Ensures the expected shoot status is matched with the actual status
                 Assert.AreEqual(status, newStatus, "Expected result is not matched with the act.");
             }
             catch (Exception ex)
