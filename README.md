@@ -66,7 +66,7 @@ BattleshipAPI is a RESTful API that implements the classic Battleship game logic
 
 #### 2\. Shoot at a Position
 
-- **URL:** `/Shoots/ShootResult?row=5&column=2`
+- **URL:** `/Shoots/ShootResult?row=5&column=3`
 - **Method:** `GET`
 - **Response:**
 
