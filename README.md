@@ -25,7 +25,8 @@ BattleshipAPI is a RESTful API that implements the classic Battleship game logic
 
 ### HTTP Header
 
-- Add the custom 'X-consumer' HTTP header to each request. This header will be used to uniquely identify individual users and is essential for handling user-specific data caching processes.
+- Keep the global constant (ex: my-console-app) value for your application. 
+- Add the custom 'X-consumer' HTTP header and that global value with each request. This value will be used to uniquely identify individual applications and is essential for handling game-specific data caching processes.
 
 ### API Endpoints
 
