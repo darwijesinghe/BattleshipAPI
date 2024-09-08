@@ -154,9 +154,9 @@ namespace Test
             int[] rows      = new int[10] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
             int[] columns   = new int[10] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
-            // extract the rows that are not occupied any ship
+            // extract the rows that are not occupied by any ship
             var missRows    = rows.Where(x => !positions.Select(r => r.Row).Contains(x)).ToList();
-            // extract the columns that are not occupied any ship
+            // extract the columns that are not occupied by any ship
             var missColumns = columns.Where(x => !positions.Select(r => r.Column).Contains(x)).ToList();
 
             var row         = missRows.First();
@@ -198,7 +198,7 @@ namespace Test
             // gets ship data
             var result = await _shipService.GetShipList(cacheKey);
 
-            // out of boundry values
+            // out of boundary values
             var row    = 12;
             var column = 5;
 
@@ -325,7 +325,7 @@ namespace Test
             string cacheKey = "test-key";
             // gets ship data
             var result      = await _shipService.GetShipList(cacheKey);
-            // all ship positions
+            // all ship's positions
             var positions   = result?.Data?.SelectMany(x => x.ShipPositions)?.ToList() ?? new List<ShipPosition>();
             // shoot status
             var status      = ShootStatus.Won;
