@@ -32,17 +32,17 @@ namespace Test
                 var serviceProvider = new ServiceCollection().AddLogging().BuildServiceProvider();
 
                 // add logger services
-                _slogger = serviceProvider.GetRequiredService<ILogger<ShipService>>();
-                _logger  = serviceProvider.GetRequiredService<ILogger<ShipPlacementTest>>();
+                _slogger            = serviceProvider.GetRequiredService<ILogger<ShipService>>();
+                _logger             = serviceProvider.GetRequiredService<ILogger<ShipPlacementTest>>();
 
                 // initialize an in-memory cache
-                _cache = new MemoryCache(new MemoryCacheOptions());
+                _cache              = new MemoryCache(new MemoryCacheOptions());
 
                 // init ship service handler
-                _shipHandle = new ShipHandle();
+                _shipHandle         = new ShipHandle();
 
                 // initialize service
-                _shipService = new ShipService(_shipHandle, _cache, _slogger);
+                _shipService        = new ShipService(_shipHandle, _cache, _slogger);
             }
             catch (Exception ex)
             {
@@ -57,17 +57,20 @@ namespace Test
         [TestMethod]
         public async Task GetShipListTest()
         {
-            // Act: Retrieves all the ship placement data using the service.
-            var result = await _shipService.GetShipList("test-key");
+            // Arrange: Cache key
+            string cacheKey = "test-key";
+
+            // Act: Retrieves all the ship placement data using the service
+            var result      = await _shipService.GetShipList(cacheKey);
 
             try
             {
-                // Assert: Ensures the result is not null, indicating ship info and placement data were retrieved successfully.
-                Assert.IsNotNull(result, "Ship placement process has not succeeded.");
+                // Assert: Ensures the result is not null, indicating ship info and placement data were retrieved successfully
+                Assert.IsNotNull(result.Data, "Ship placement process has not succeeded.");
             }
             catch (Exception ex)
             {
-                // Fail the test if an exception occurs during assertion.
+                // Fail the test if an exception occurs during assertion
                 Assert.Fail(ex.Message);
             }
         }
