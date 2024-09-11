@@ -12,7 +12,7 @@ namespace Services.Interfaces
         /// <param name="column">The column position of the shot</param>
         /// <param name="consumer">The consumer application unique value</param>
         /// <returns>
-        /// The <see cref="Result"/> object which includes the shoot result
+        /// The <see cref="Result{ShootResult}"/> object which includes the shoot result
         /// </returns>
         Task<Result<ShootResult>> GetShootResult(int row, int column, string consumer);
     }

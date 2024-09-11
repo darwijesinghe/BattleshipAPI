@@ -10,7 +10,7 @@ namespace Services.Interfaces
         /// </summary>
         /// <param name="consumer">The consumer application unique value</param>
         /// <returns>
-        /// The <see cref="Result"/> object which includes a list of ships if the operation is successful
+        /// The <see cref="Result{List{Ship}}"/> object which includes a list of ships if the operation is successful
         /// </returns>
         Task<Result<List<Ship>>> GetShipList(string consumer);
 

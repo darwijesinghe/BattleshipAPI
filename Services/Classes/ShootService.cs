@@ -31,7 +31,7 @@ namespace Services.Classes
         /// <param name="column">The column position of the shot</param>
         /// <param name="consumer">The consumer application unique value</param>
         /// <returns>
-        /// The <see cref="Result"/> object which includes the shoot result
+        /// The <see cref="Result{ShootResult}"/> object which includes the shoot result
         /// </returns>
         public async Task<Result<ShootResult>> GetShootResult(int row, int column, string consumer)
         {
@@ -46,6 +46,7 @@ namespace Services.Classes
 
                 // gets ship list
                 var shipList = await GetCached<Result<List<Ship>>>(shipKey);
+                shipList.Data = null;
                 if (shipList is null || !shipList.Data.HasValue())
                     return new Result<ShootResult> { Message = "No ship(s) were found to shoot." };
 

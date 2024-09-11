@@ -3,7 +3,7 @@
 namespace Domain.Helpers
 {
     /// <summary>
-    /// Class for the helper mothods.
+    /// Class for the helper mothods
     /// </summary>
     public static class Helper
     {
@@ -23,13 +23,13 @@ namespace Domain.Helpers
             // picks the ship placing direction randomly
             switch (random.Next(1, 4))
             {
-                case 1:
+                case 1 :
                     return ShipDirection.Up;
-                case 2:
+                case 2 :
                     return ShipDirection.Down;
-                case 3:
+                case 3 :
                     return ShipDirection.Left;
-                case 4:
+                case 4 :
                     return ShipDirection.Right;
                 default:
                     return ShipDirection.NotSet;

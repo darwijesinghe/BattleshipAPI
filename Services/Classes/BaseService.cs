@@ -129,7 +129,7 @@ namespace Services.Classes
         /// <param name="duration">The duration (in minutes) for which the data should be cached</param>
         /// <param name="create">A function that retrieves the data if it is not found in the cache</param>
         /// <returns>
-        /// The cached data if available; otherwise, data retrieved by the function; null on error.
+        /// The cached data if available; otherwise, data retrieved by the function; null on error
         /// </returns>
         private async Task<T> LoadCached<T>(string internalKey, int duration, Func<Task<T>> create) where T : class
         {
