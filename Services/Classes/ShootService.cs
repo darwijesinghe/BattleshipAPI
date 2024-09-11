@@ -46,7 +46,6 @@ namespace Services.Classes
 
                 // gets ship list
                 var shipList = await GetCached<Result<List<Ship>>>(shipKey);
-                shipList.Data = null;
                 if (shipList is null || !shipList.Data.HasValue())
                     return new Result<ShootResult> { Message = "No ship(s) were found to shoot." };
 
