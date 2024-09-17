@@ -51,7 +51,7 @@ namespace Domain.Handling
                     // execute until get the successful result.
                     // locations are generated randomly.
                     // random result might be out of 10 * 10 grid with the direction.
-                    // therefore need to execute the method until we get the valid positions.
+                    // therefore, need to execute the method until we get the valid positions.
 
                     do
                     {

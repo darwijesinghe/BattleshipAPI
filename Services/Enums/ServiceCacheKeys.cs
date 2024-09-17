@@ -5,8 +5,14 @@
     /// </summary>
     public enum ServiceCacheKeys
     {
-       
+       /// <summary>
+       /// List of all ships
+       /// </summary>
         AllShips,
+
+        /// <summary>
+        /// Shoot result
+        /// </summary>
         ShootResult,
     }
 }

@@ -8,7 +8,7 @@ namespace Domain.Helpers
     public static class Helper
     {
         /// <summary>
-        /// Random class instance.
+        /// Random class instance
         /// </summary>
         private static Random random = new Random();
 
