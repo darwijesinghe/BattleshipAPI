@@ -38,7 +38,7 @@ BattleshipAPI is a RESTful API that implements the classic Battleship game logic
 
 ```json
 {
-  "message": "Ok",
+  "message": "Ok.",
   "success": true,
   "data": [
     {
@@ -72,7 +72,7 @@ BattleshipAPI is a RESTful API that implements the classic Battleship game logic
 
 ```json
 {
-  "message": "Ok",
+  "message": "Ok.",
   "success": true,
   "data": {
     "shootStatus": 3,
