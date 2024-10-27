@@ -14,12 +14,12 @@ namespace Test
     [TestClass]
     public class ShipPlacementTest
     {
-        // services
+        // Services
         private IMemoryCache                  _cache;
         private IShipHandle              _shipHandle;
         private IShipService            _shipService;
 
-        // logs
+        // Logs
         private ILogger<ShipService>        _slogger;
         private ILogger<ShipPlacementTest>   _logger;
 
@@ -52,7 +52,7 @@ namespace Test
         }
 
         /// <summary>
-        /// Tests the retrieval of all ship data with the placement information
+        /// Tests the retrieval of all ship data with the placement information.
         /// </summary>
         [TestMethod]
         public async Task GetShipListTest()

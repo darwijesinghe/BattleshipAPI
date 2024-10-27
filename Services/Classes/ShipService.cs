@@ -14,7 +14,7 @@ namespace Services.Classes
     /// </summary>
     public class ShipService : BaseService, IShipService
     {
-        // services
+        // Services
         private readonly ILogger<ShipService> _logger;
         private readonly IShipHandle      _shipHandle;
 
@@ -25,11 +25,11 @@ namespace Services.Classes
         }
 
         /// <summary>
-        /// Retrieves a list of ships
+        /// Retrieves a list of ships.
         /// </summary>
-        /// <param name="consumer">The consumer application unique value</param>
+        /// <param name="consumer">The consumer application unique value.</param>
         /// <returns>
-        /// The <see cref="Result"/> object which includes a list of ships if the operation is successful
+        /// The <see cref="Result"/> object which includes a list of ships if the operation is successful.
         /// </returns>
         public async Task<Result<List<Ship>>> GetShipList(string consumer)
         {

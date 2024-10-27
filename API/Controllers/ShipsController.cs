@@ -7,7 +7,7 @@ namespace API.Controllers
     [ApiController]
     public class ShipsController : ControllerBase
     {
-        // services
+        // Services
         private readonly ILogger<ShipsController> _logger;
         private readonly IShipService        _shipService;
         private readonly IShootService      _shootService;
@@ -20,11 +20,11 @@ namespace API.Controllers
         }
 
         /// <summary>
-        /// Processes the ships placing process on the grid
+        /// Processes the ships placing process on the grid.
         /// </summary>
-        /// <param name="consumer">The unique key that will be used to data cache</param>
+        /// <param name="consumer">The unique key that will be used to data cache.</param>
         /// <returns>
-        /// A JsonResult that indicates the success or failure of the ship placement operation
+        /// A <see cref="JsonResult"/> that indicates the success or failure of the ship placement operation.
         /// </returns>
         [HttpGet("PlaceShips")]
         public async Task<JsonResult> PlaceShips([FromHeader(Name = "X-consumer")] string consumer)

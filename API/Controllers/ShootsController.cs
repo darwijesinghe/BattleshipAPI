@@ -7,7 +7,7 @@ namespace API.Controllers
     [ApiController]
     public class ShootsController : ControllerBase
     {        
-        // services
+        // Services
         private readonly ILogger<ShipsController> _logger;
         private readonly IShootService      _shootService;
 
@@ -18,13 +18,13 @@ namespace API.Controllers
         }
 
         /// <summary>
-        /// Processes a shot fired result
+        /// Processes a shot fired result.
         /// </summary>
-        /// <param name="consumer">The unique key that will be used to data cache</param>
-        /// <param name="row">The row number of the grid where the shot is fired</param>
-        /// <param name="column">The column number of the grid where the shot is fired</param>
+        /// <param name="consumer">The unique key that will be used to data cache.</param>
+        /// <param name="row">The row number of the grid where the shot is fired.</param>
+        /// <param name="column">The column number of the grid where the shot is fired.</param>
         /// <returns>
-        /// A JsonResult that contains the outcome of the shot
+        /// A <see cref="JsonResult"/> that contains the outcome of the shot.
         /// </returns>
         [HttpGet("ShootResult")]
         public async Task<JsonResult> ShootResult([FromHeader(Name = "X-consumer")] string consumer, int row, int column)

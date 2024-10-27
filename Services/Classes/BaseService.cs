@@ -8,7 +8,7 @@ namespace Services.Classes
     /// </summary>
     public class BaseService
     {
-        // services
+        // Services
         private readonly IMemoryCache           _cache;
         private readonly ILogger<BaseService>  _logger;
 
@@ -19,12 +19,12 @@ namespace Services.Classes
         }
 
         /// <summary>
-        /// Retrieves an item from the cache based on the provided key
+        /// Retrieves an item from the cache based on the provided key.
         /// </summary>
-        /// <typeparam name="T">The type of the data to retrieve from the cache</typeparam>
-        /// <param name="key">The key used to look up the cached item</param>
+        /// <typeparam name="T">The type of the data to retrieve from the cache.</typeparam>
+        /// <param name="key">The key used to look up the cached item.</param>
         /// <returns>
-        /// The result will be the cached item if found; othersie, <c>null</c> if the item is not in the cache
+        /// The result will be the cached item if found; othersie, <c>null</c> if the item is not in the cache.
         /// </returns>
         protected Task<T> GetCached<T>(string key) where T : class
         {
@@ -37,11 +37,11 @@ namespace Services.Classes
         }
 
         /// <summary>
-        /// Stores data in the cache with the specified key. Cache duration is 5 minutes
+        /// Stores data in the cache with the specified key. Cache duration is 5 minutes.
         /// </summary>
-        /// <typeparam name="T">The type of the data to be cached</typeparam>
-        /// <param name="key">The key used to store and retrieve the cached item</param>
-        /// <param name="data">The data to be stored in the cache</param>
+        /// <typeparam name="T">The type of the data to be cached.</typeparam>
+        /// <param name="key">The key used to store and retrieve the cached item.</param>
+        /// <param name="data">The data to be stored in the cache.</param>
         protected async Task Cached<T>(string key, T data) where T : class
         {
             // calls the set cache method to set the cache
@@ -50,13 +50,13 @@ namespace Services.Classes
 
         /// <summary>
         /// Retrieves data from the cache or fetches it using the provided 
-        /// function if not already cached. Cache duration is 5 minutes
+        /// function if not already cached. Cache duration is 5 minutes.
         /// </summary>
-        /// <typeparam name="T">The type of data to be cached and retrieved</typeparam>
-        /// <param name="key">The key used to store and retrieve the cached item</param>
-        /// <param name="create">A function that retrieves the data if it is not found in the cache</param>
+        /// <typeparam name="T">The type of data to be cached and retrieved.</typeparam>
+        /// <param name="key">The key used to store and retrieve the cached item.</param>
+        /// <param name="create">A function that retrieves the data if it is not found in the cache.</param>
         /// <returns>
-        /// The cached data if available; otherwise, data retrieved by the function
+        /// The cached data if available; otherwise, data retrieved by the function.
         /// </returns>
         protected async Task<T> Cached<T>(string key, Func<Task<T>> create) where T : class
         {
@@ -66,13 +66,13 @@ namespace Services.Classes
 
         /// <summary>
         /// Retrieves data from the cache or fetches it using the provided 
-        /// function if not already cached. Cache duration is 60 minutes
+        /// function if not already cached. Cache duration is 60 minutes.
         /// </summary>
-        /// <typeparam name="T">The type of data to be cached and retrieved</typeparam>
-        /// <param name="key">The key used to store and retrieve the cached item</param>
-        /// <param name="create">A function that retrieves the data if it is not found in the cache</param>
+        /// <typeparam name="T">The type of data to be cached and retrieved.</typeparam>
+        /// <param name="key">The key used to store and retrieve the cached item.</param>
+        /// <param name="create">A function that retrieves the data if it is not found in the cache.</param>
         /// <returns>
-        /// The cached data if available; otherwise, data retrieved by the function
+        /// The cached data if available; otherwise, data retrieved by the function.
         /// </returns>
         protected async Task<T> CachedLong<T>(string key, Func<Task<T>> create) where T : class
         {
@@ -81,9 +81,9 @@ namespace Services.Classes
         }
 
         /// <summary>
-        /// Removes a specific cache entry based on the provided key
+        /// Removes a specific cache entry based on the provided key.
         /// </summary>
-        /// <param name="key">The cache key for the data to remove</param>
+        /// <param name="key">The cache key for the data to remove.</param>
         protected void RemoveCached(string key)
         {
             // checks the cache for the given key
@@ -95,12 +95,12 @@ namespace Services.Classes
         }
 
         /// <summary>
-        /// Stores a value in the cache with a specified key and duration
+        /// Stores a value in the cache with a specified key and duration.
         /// </summary>
-        /// <typeparam name="T">The type of the value to be cached. Must be a reference type</typeparam>
-        /// <param name="internalKey">The key used to store and retrieve the cached item</param>
-        /// <param name="duration">The time duration (in minutes) for which the value should remain in the cache</param>
-        /// <param name="value">The value to be stored in the cache</param>
+        /// <typeparam name="T">The type of the value to be cached. Must be a reference type.</typeparam>
+        /// <param name="internalKey">The key used to store and retrieve the cached item.</param>
+        /// <param name="duration">The time duration (in minutes) for which the value should remain in the cache.</param>
+        /// <param name="value">The value to be stored in the cache.</param>
         private Task SetCache<T>(string internalKey, int duration, T value) where T : class
         {
             try
@@ -122,14 +122,14 @@ namespace Services.Classes
         }
 
         /// <summary>
-        /// Loads data from the cache or retrieves it using the provided function if not cached
+        /// Loads data from the cache or retrieves it using the provided function if not cached.
         /// </summary>
-        /// <typeparam name="T">The type of data to be cached and retrieved</typeparam>
-        /// <param name="internalKey">The key used to store and retrieve the cached data</param>
-        /// <param name="duration">The duration (in minutes) for which the data should be cached</param>
-        /// <param name="create">A function that retrieves the data if it is not found in the cache</param>
+        /// <typeparam name="T">The type of data to be cached and retrieved.</typeparam>
+        /// <param name="internalKey">The key used to store and retrieve the cached data.</param>
+        /// <param name="duration">The duration (in minutes) for which the data should be cached.</param>
+        /// <param name="create">A function that retrieves the data if it is not found in the cache.</param>
         /// <returns>
-        /// The cached data if available; otherwise, data retrieved by the function; null on error
+        /// The cached data if available; otherwise, data retrieved by the function; null on error.
         /// </returns>
         private async Task<T> LoadCached<T>(string internalKey, int duration, Func<Task<T>> create) where T : class
         {

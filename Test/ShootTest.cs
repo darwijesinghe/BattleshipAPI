@@ -16,14 +16,14 @@ namespace Test
     [TestClass]
     public class ShootTest
     {
-        // services
+        // Services
         private IMemoryCache              _cache;
         private IShootHandle        _shootHandle;
         private IShipHandle          _shipHandle;
         private IShootService      _shootService;
         private IShipService        _shipService;
 
-        // logs
+        // Logs
         private ILogger<ShootService>   _slogger;
         private ILogger<ShipService>    _xlogger;
         private ILogger<ShootTest>       _logger;
@@ -66,7 +66,7 @@ namespace Test
 
         /// <summary>
         /// Tests the GetShootResult method to verify that shoot result 
-        /// is returned for the given row and column coordinates
+        /// is returned for the given row and column coordinates.
         /// </summary>
         [TestMethod]
         public async Task GetShootResultTest()
@@ -95,7 +95,7 @@ namespace Test
 
         /// <summary>
         /// Tests the hit status functionality by simulating a shot and verifying 
-        /// if the correct status 'Hit' is returned based on the target coordinates
+        /// if the correct status 'Hit' is returned based on the target coordinates.
         /// </summary>
         [TestMethod]
         public async Task HitStatusTest()
@@ -136,7 +136,7 @@ namespace Test
 
         /// <summary>
         /// Tests the hit status functionality by simulating a shot and verifying 
-        /// if the correct status 'Miss' is returned based on the target coordinates
+        /// if the correct status 'Miss' is returned based on the target coordinates.
         /// </summary>
         [TestMethod]
         public async Task MissStatusTest()
@@ -186,7 +186,7 @@ namespace Test
 
         /// <summary>
         /// Tests the hit status functionality by simulating a shot and verifying 
-        /// if the correct status 'Invalid' is returned based on the target coordinates
+        /// if the correct status 'Invalid' is returned based on the target coordinates.
         /// </summary>
         [TestMethod]
         public async Task InvalidStatusTest()
@@ -226,7 +226,7 @@ namespace Test
 
         /// <summary>
         /// Tests the hit status functionality by simulating a shot and verifying 
-        /// if the correct status 'Same' is returned based on the target coordinates
+        /// if the correct status 'Same' is returned based on the target coordinates.
         /// </summary>
         [TestMethod]
         public async Task SameStatusTest()
@@ -266,7 +266,7 @@ namespace Test
 
         /// <summary>
         /// Tests the hit status functionality by simulating a shot and verifying 
-        /// if the correct status 'Sunk' is returned based on the target coordinates
+        /// if the correct status 'Sunk' is returned based on the target coordinates.
         /// </summary>
         [TestMethod]
         public async Task SunkStatusTest()
@@ -314,7 +314,7 @@ namespace Test
 
         /// <summary>
         /// Tests the hit status functionality by simulating a shot and verifying 
-        /// if the correct status 'Won' is returned based on the target coordinates
+        /// if the correct status 'Won' is returned based on the target coordinates.
         /// </summary>
         [TestMethod]
         public async Task WonStatusTest()

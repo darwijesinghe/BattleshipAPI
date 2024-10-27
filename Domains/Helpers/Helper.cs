@@ -13,10 +13,10 @@ namespace Domain.Helpers
         private static Random random = new Random();
 
         /// <summary>
-        /// Randomly picks the direction to place the ship (squars)
+        /// Randomly picks the direction to place the ship (squars).
         /// </summary>
         /// <returns>
-        /// A <see cref="ShipDirection"/> enum value
+        /// A <see cref="ShipDirection"/> enum value.
         /// </returns>
         public static ShipDirection Direction()
         {
@@ -37,10 +37,10 @@ namespace Domain.Helpers
         }
 
         /// <summary>
-        /// Randomly picks the number to decide the ship location
+        /// Randomly picks the number to decide the ship location.
         /// </summary>
         /// <returns>
-        /// A randomly picked <see cref="int"/> number
+        /// A randomly picked <see cref="int"/> number.
         /// </returns>
         public static int Location()
         {
@@ -48,11 +48,11 @@ namespace Domain.Helpers
         }
 
         /// <summary>
-        /// Checks whether the given <see cref="IEnumerable{T}"/> has any non-null elements
+        /// Checks whether the given <see cref="IEnumerable{T}"/> has any non-null elements.
         /// </summary>
-        /// <param name="data">The collection of elements to check for non-null values</param>
+        /// <param name="data">The collection of elements to check for non-null values.</param>
         /// <returns>
-        /// <c>true</c> if the collection is not null and contains at least one non-null element; otherwise, <c>false</c>
+        /// <c>true</c> if the collection is not null and contains at least one non-null element; otherwise, <c>false</c>.
         /// </returns>
         public static bool HasValue<T>(this IEnumerable<T> data)
         {

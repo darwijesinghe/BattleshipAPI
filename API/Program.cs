@@ -16,9 +16,9 @@ builder.Services.AddMemoryCache();
 builder.Services.AddLogging();
 
 // Register services
-builder.Services.AddScoped<IShipHandle, ShipHandle>();
-builder.Services.AddScoped<IShootHandle, ShootHandle>();
-builder.Services.AddScoped<IShipService, ShipService>();
+builder.Services.AddScoped<IShipHandle  , ShipHandle>();
+builder.Services.AddScoped<IShootHandle , ShootHandle>();
+builder.Services.AddScoped<IShipService , ShipService>();
 builder.Services.AddScoped<IShootService, ShootService>();
 
 // Register endpoint and swagger

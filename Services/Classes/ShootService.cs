@@ -14,7 +14,7 @@ namespace Services.Classes
     /// </summary>
     public class ShootService : BaseService, IShootService
     {        
-        // services
+        // Services
         private readonly ILogger<ShootService>   _logger;
         private readonly IShootHandle       _shootHandle;
 
@@ -25,13 +25,13 @@ namespace Services.Classes
         }
 
         /// <summary>
-        /// Retrieves the result of a shoot based on the provided shoot (row and column) position
+        /// Retrieves the result of a shoot based on the provided shoot (row and column) position.
         /// </summary>
-        /// <param name="row">The row position of the shot</param>
-        /// <param name="column">The column position of the shot</param>
-        /// <param name="consumer">The consumer application unique value</param>
+        /// <param name="row">The row position of the shot.</param>
+        /// <param name="column">The column position of the shot.</param>
+        /// <param name="consumer">The consumer application unique value.</param>
         /// <returns>
-        /// The <see cref="Result{ShootResult}"/> object which includes the shoot result
+        /// The <see cref="Result{ShootResult}"/> object which includes the shoot result.
         /// </returns>
         public async Task<Result<ShootResult>> GetShootResult(int row, int column, string consumer)
         {
